@@ -10,7 +10,7 @@ export default function EventNotFound() {
           <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">404 · Event</p>
           <CardTitle className="text-3xl tracking-[-0.03em]">That event is not here.</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-5">
+        <CardContent className="flex flex-col gap-5">
           <p className="leading-7 text-muted-foreground">
             The preview may have changed, or the event may not be published. No ticket or payment
             state was changed.

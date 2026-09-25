@@ -10,7 +10,7 @@ export default function CheckoutNotFound() {
           <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">Checkout unavailable</p>
           <CardTitle className="text-3xl tracking-[-0.03em]">That event cannot be checked out.</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-5">
+        <CardContent className="flex flex-col gap-5">
           <p className="leading-7 text-muted-foreground">
             The event may have moved out of the sale window or is no longer available. No order or
             payment was created.

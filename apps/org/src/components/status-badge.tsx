@@ -1,11 +1,15 @@
 import { Badge } from "@krowds/ui/components/badge";
 
 const destructiveStatuses = new Set([
+  "blocked",
+  "denied",
+  "expired",
   "failed",
-  "rejected",
-  "revoked",
   "invalidated",
+  "rejected",
   "replacement_required",
+  "revoked",
+  "suspended",
 ]);
 
 const positiveStatuses = new Set([
@@ -14,8 +18,18 @@ const positiveStatuses = new Set([
   "approved",
   "available",
   "paid",
-  "used",
   "verified",
+]);
+
+const mutedStatuses = new Set([
+  "closed",
+  "declined",
+  "invited",
+  "pending",
+  "revision_required",
+  "submitted",
+  "under_review",
+  "used",
 ]);
 
 function formatStatus(status: string) {
@@ -36,7 +50,7 @@ export function StatusBadge({
     ? "destructive"
     : positiveStatuses.has(status)
       ? "default"
-      : status === "closed" || status === "declined" || status === "expired"
+      : mutedStatuses.has(status)
         ? "secondary"
         : "outline";
 

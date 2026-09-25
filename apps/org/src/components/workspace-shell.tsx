@@ -4,6 +4,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@krowds/ui/components/badge";
 import { buttonVariants } from "@krowds/ui/components/button";
+import { KrowdsBrand } from "@krowds/ui/components/brand";
+import { Card, CardContent } from "@krowds/ui/components/card";
+import { Separator } from "@krowds/ui/components/separator";
 import { cn } from "@krowds/ui/lib/utils";
 import { organizationFixture } from "@/lib/fixtures";
 import { StatusBadge } from "@/components/status-badge";
@@ -86,37 +89,40 @@ function NavigationLinks({ onNavigate }: { onNavigate?: () => void }) {
 
 function TenantContext() {
   return (
-    <div className="rounded-xl border bg-background p-4 shadow-sm shadow-foreground/5">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="text-xs font-medium text-muted-foreground">
-            Current organization
-          </p>
-          <p className="mt-1 truncate font-heading text-sm font-semibold">
-            {organizationFixture.displayName}
-          </p>
+    <Card size="sm">
+      <CardContent className="flex flex-col gap-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-xs font-medium text-muted-foreground">
+              Current organization
+            </p>
+            <p className="mt-1 truncate font-heading text-sm font-semibold">
+              {organizationFixture.displayName}
+            </p>
+          </div>
+          <Badge variant="outline">Fixture</Badge>
         </div>
-        <Badge variant="outline">Fixture</Badge>
-      </div>
-      <dl className="mt-4 grid gap-3 text-xs">
-        <div className="flex items-center justify-between gap-3">
-          <dt className="text-muted-foreground">Tenant</dt>
-          <dd className="truncate font-mono">{organizationFixture.id}</dd>
-        </div>
-        <div className="flex items-center justify-between gap-3">
-          <dt className="text-muted-foreground">Verification</dt>
-          <dd>
-            <StatusBadge status={organizationFixture.verificationStatus} />
-          </dd>
-        </div>
-        <div className="flex items-center justify-between gap-3">
-          <dt className="text-muted-foreground">Membership</dt>
-          <dd>
-            <StatusBadge status={organizationFixture.membership.status} />
-          </dd>
-        </div>
-      </dl>
-    </div>
+        <Separator />
+        <dl className="grid gap-3 text-xs">
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-muted-foreground">Tenant</dt>
+            <dd className="truncate font-mono">{organizationFixture.id}</dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-muted-foreground">Verification</dt>
+            <dd>
+              <StatusBadge status={organizationFixture.verificationStatus} />
+            </dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-muted-foreground">Membership</dt>
+            <dd>
+              <StatusBadge status={organizationFixture.membership.status} />
+            </dd>
+          </div>
+        </dl>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -124,22 +130,19 @@ export function WorkspaceShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-muted/30 text-foreground">
       <a
-        className="fixed left-4 top-4 z-50 -translate-y-24 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform focus:translate-y-0"
         href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-primary-foreground"
       >
-        Skip to content
+        Skip to main content
       </a>
 
       <aside className="fixed inset-y-0 left-0 hidden w-72 border-r bg-sidebar p-4 lg:flex lg:flex-col">
         <div className="flex items-center gap-3 px-2 py-2">
-          <span className="grid size-9 place-items-center rounded-xl bg-primary text-sm font-semibold text-primary-foreground">
-            K
-          </span>
-          <div>
-            <p className="font-heading text-sm font-semibold">KROWDS Org</p>
-            <p className="text-xs text-muted-foreground">Organization workspace</p>
-          </div>
+          <KrowdsBrand render={<Link href="/" />} />
         </div>
+        <p className="px-2 text-xs text-muted-foreground">
+          Organization workspace
+        </p>
         <div className="mt-4">
           <TenantContext />
         </div>

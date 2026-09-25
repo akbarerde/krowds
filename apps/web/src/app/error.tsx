@@ -22,7 +22,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
           <p className="font-mono text-xs uppercase tracking-[0.16em] text-destructive">Unexpected error</p>
           <CardTitle className="text-3xl tracking-[-0.03em]">This page could not load.</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-5">
+        <CardContent className="flex flex-col gap-5">
           <p className="leading-7 text-muted-foreground">
             Something went wrong while preparing the preview. Try again, or return to the event
             catalog. Your ticket and payment state are not changed by this page.

@@ -22,7 +22,7 @@ export default function TicketError({ error, reset }: TicketErrorProps) {
           <p className="font-mono text-xs uppercase tracking-[0.16em] text-destructive">Wallet error</p>
           <CardTitle className="text-3xl tracking-[-0.03em]">Your tickets could not be loaded.</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-5">
+        <CardContent className="flex flex-col gap-5">
           <p className="leading-7 text-muted-foreground">
             This is a preview data error, not a statement about payment. Try again or return to the
             event catalog.

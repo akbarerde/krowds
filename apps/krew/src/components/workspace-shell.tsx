@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 
 import { Badge } from "@krowds/ui/components/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@krowds/ui/components/card";
+import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { cn } from "@krowds/ui/lib/utils";
 
 import {
@@ -51,7 +52,7 @@ export function WorkspaceShell({ children, principal }: WorkspaceShellProps) {
     <div className="min-h-dvh bg-background text-foreground">
       <a
         href="#main-content"
-        className="sr-only z-50 rounded-md bg-primary px-3 py-2 text-primary-foreground focus:not-sr-only focus:fixed focus:start-3 focus:top-3"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-3 focus:text-sm focus:font-medium focus:text-primary-foreground"
       >
         Skip to workspace content
       </a>
@@ -59,19 +60,10 @@ export function WorkspaceShell({ children, principal }: WorkspaceShellProps) {
       <header className="border-b bg-background">
         <div className="mx-auto flex w-full max-w-[100rem] flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
-            <Link
-              href="/"
-              className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary text-sm font-semibold text-primary-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
-              aria-label="KROWDS Krew overview"
-            >
-              K
-            </Link>
-            <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">KROWDS Krew</p>
-              <p className="truncate text-xs text-muted-foreground">
-                Internal operations workspace
-              </p>
-            </div>
+            <KrowdsBrand render={<Link href="/" />} />
+            <p className="truncate text-xs text-muted-foreground">
+              Internal operations workspace
+            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">

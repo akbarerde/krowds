@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Badge } from "@krowds/ui/components/badge";
+import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { Button } from "@krowds/ui/components/button";
 
 const navigation = [
@@ -21,19 +22,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       <header className="sticky top-0 z-30 border-b bg-background">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 sm:px-6 lg:px-10">
-          <Link
-            href="/"
-            aria-label="KROWDS home"
-            className="group inline-flex shrink-0 items-center gap-2.5 rounded-md font-semibold tracking-[-0.02em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-          >
-            <span
-              aria-hidden="true"
-              className="grid size-9 place-items-center rounded-xl bg-primary text-sm text-primary-foreground transition-transform group-hover:-rotate-3"
-            >
-              K
-            </span>
-            <span>KROWDS</span>
-          </Link>
+          <KrowdsBrand render={<Link href="/" />} />
 
           <nav aria-label="Primary navigation" className="order-3 -mx-1 w-full overflow-x-auto sm:order-none sm:mx-0 sm:w-auto sm:flex-1">
             <ul className="flex min-w-max items-center gap-1 px-1 sm:min-w-0">

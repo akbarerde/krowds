@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Badge } from "@krowds/ui/components/badge";
+import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { Button } from "@krowds/ui/components/button";
 import {
   Card,
@@ -847,42 +848,13 @@ function StateSwitcher({ currentView, onSelect }: StateSwitcherProps) {
   );
 }
 
-function Brand({ inverted = false }: { inverted?: boolean }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span
-        className={cn(
-          "grid size-10 place-items-center rounded-xl text-sm font-semibold",
-          inverted
-            ? "bg-background text-foreground"
-            : "bg-primary text-primary-foreground",
-        )}
-        aria-hidden="true"
-      >
-        K
-      </span>
-      <div className="flex flex-col">
-        <span className="text-sm font-semibold tracking-tight">KROWDS</span>
-        <span
-          className={cn(
-            "text-xs",
-            inverted ? "text-background/65" : "text-muted-foreground",
-          )}
-        >
-          Auth workspace
-        </span>
-      </div>
-    </div>
-  );
-}
-
 function Aside() {
   return (
     <aside className="relative hidden overflow-hidden border-r border-border bg-foreground text-background lg:flex lg:flex-col">
       <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full border border-background/10" />
       <div className="pointer-events-none absolute -bottom-40 -left-28 size-96 rounded-full border border-background/10" />
       <div className="relative flex h-full flex-col justify-between p-10 xl:p-14">
-        <Brand inverted />
+        <KrowdsBrand className="text-background hover:bg-background/10 hover:text-background" />
 
         <div className="max-w-lg">
           <p className="text-4xl font-semibold tracking-tight text-background/90">
@@ -1398,7 +1370,7 @@ export function AuthExperience() {
         <div className="flex min-h-dvh min-w-0 flex-col px-5 py-6 sm:px-8 lg:px-12 xl:px-20">
           <header className="flex items-center justify-between gap-4">
             <div className="lg:hidden">
-              <Brand />
+              <KrowdsBrand />
             </div>
             <div className="hidden lg:block" aria-hidden="true" />
             <div className="flex items-center gap-3">

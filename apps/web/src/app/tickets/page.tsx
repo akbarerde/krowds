@@ -99,7 +99,7 @@ function EmptyWallet() {
           tickets for the selected empty view.
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex flex-col gap-4">
         <p className="text-sm leading-6 text-muted-foreground">
           Browse an event to see the purchase path. An empty wallet is not a payment error and does
           not mean a payment failed.

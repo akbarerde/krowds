@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "@krowds/ui/components/button";
+import { KrowdsBrand } from "@krowds/ui/components/brand";
 
 const routes = [
   { href: "/", label: "Overview" },
@@ -18,16 +19,7 @@ export function PwaNav() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
         {/* Keep full-document navigation so the presentation worker handles offline routes. */}
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a
-          href="/"
-          className="flex min-h-11 w-fit items-center gap-3 rounded-lg font-semibold tracking-tight outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
-          aria-label="KROWDS overview"
-        >
-          <span className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground">
-            K
-          </span>
-          <span>KROWDS</span>
-        </a>
+        <KrowdsBrand render={<a href="/" />} />
 
         <nav
           aria-label="Primary navigation"

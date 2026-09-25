@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@krowds/ui/components/card";
+import { Skeleton } from "@krowds/ui/components/skeleton";
 
 export default function Loading() {
   return (
@@ -16,8 +17,8 @@ export default function Loading() {
       className="flex flex-col gap-6"
     >
       <div className="flex flex-col gap-3 border-b pb-5">
-        <div className="h-8 w-56 animate-pulse rounded-md bg-muted motion-reduce:animate-none" />
-        <div className="h-4 w-full max-w-2xl animate-pulse rounded-md bg-muted motion-reduce:animate-none" />
+        <Skeleton className="h-8 w-56" />
+        <Skeleton className="h-4 w-full max-w-2xl" />
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(20rem,0.8fr)]">
@@ -30,10 +31,7 @@ export default function Loading() {
           </CardHeader>
           <CardContent className="flex flex-col gap-3" aria-hidden="true">
             {[0, 1, 2].map((item) => (
-              <div
-                key={item}
-                className="h-20 animate-pulse rounded-lg bg-muted motion-reduce:animate-none"
-              />
+              <Skeleton key={item} className="h-20 rounded-lg" />
             ))}
           </CardContent>
         </Card>
@@ -49,7 +47,7 @@ export default function Loading() {
             </CardDescription>
           </CardHeader>
           <CardContent aria-hidden="true">
-            <div className="h-40 animate-pulse rounded-lg bg-muted motion-reduce:animate-none" />
+            <Skeleton className="h-40 rounded-lg" />
           </CardContent>
         </Card>
       </div>
