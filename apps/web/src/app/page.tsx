@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@krowds/ui/components/button";
+import { OperatorConsolePreview } from "@/components/operator-console-preview";
 
 export const metadata: Metadata = {
   title: "Run events with one clear operating system",
@@ -19,22 +20,26 @@ const operatingSteps = [
   {
     label: "Organize",
     title: "Shape the event",
-    description: "Keep venue, sessions, products, and roles inside one tenant-scoped model.",
+    description:
+      "Keep organization, venue, event, sessions, products, and roles in one tenant-scoped hierarchy.",
   },
   {
     label: "Sell",
     title: "Guide IDR checkout",
-    description: "Let provider-backed payment state stay explicit from order to ticket.",
+    description:
+      "Give ticketing and cashier teams one IDR commerce flow with explicit provider state.",
   },
   {
     label: "Fulfill",
     title: "Trace every handoff",
-    description: "Keep ticket, wristband, and fulfillment context connected to the order.",
+    description:
+      "Connect ticket, wristband, production, and shipping records to the same order.",
   },
   {
     label: "Admit",
     title: "Make the next action clear",
-    description: "Keep online access decisions current, single-use, and backend-owned.",
+    description:
+      "Let gate and redemption teams validate current entitlement online, with every decision auditable.",
   },
 ] as const;
 
@@ -50,8 +55,9 @@ export default function Home() {
             Run every event from one clear operating system.
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-            KROWDS is the B2B operating system for venues, attractions, and event teams—connecting
-            commerce, ticketing, fulfillment, and visitor access in one accountable workflow.
+            One workspace for the teams who run events, attractions, and venues. KROWDS connects
+            event setup, IDR commerce, fulfillment, and online access so every handoff has an owner
+            and a safe next action.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Button
@@ -59,9 +65,9 @@ export default function Home() {
               className="bg-primary text-primary-foreground hover:bg-primary/80"
               nativeButton={false}
               role="link"
-              render={<Link href="#operator-model" />}
+              render={<Link href="#operator-console" />}
             >
-              Explore the product
+              See the product flow
             </Button>
             <Button
               variant="outline"
@@ -111,10 +117,10 @@ export default function Home() {
               losing the state behind each handoff.
             </p>
             <Link
-              href="/events"
+              href="#operator-console"
               className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              See the visitor surface
+              See the operator view
             </Link>
           </div>
           <div className="border-y">
@@ -138,6 +144,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="operator-console"
+        className="scroll-mt-24 border-t py-12 sm:py-16"
+        aria-labelledby="operator-console-heading"
+      >
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:items-start lg:gap-16">
+          <div>
+            <h2
+              id="operator-console-heading"
+              className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
+            >
+              A clear operator view for every handoff.
+            </h2>
+            <p className="mt-3 max-w-xl text-base leading-7 text-muted-foreground">
+              The illustrative console below shows how KROWDS can keep catalog, commerce,
+              fulfillment, and access in one readable flow—without asking the browser to invent a
+              business state.
+            </p>
+            <p className="mt-6 max-w-md text-sm leading-6 text-muted-foreground">
+              Built for organization owners, ticketing, cashier, finance, redemption, gate, and
+              KREW operations.
+            </p>
+          </div>
+          <OperatorConsolePreview />
+        </div>
+      </section>
+
       <section className="border-t py-12 sm:py-16" aria-labelledby="home-cta-heading">
         <div className="rounded-2xl border border-border bg-muted/40 px-6 py-10 text-foreground sm:px-10 sm:py-12 lg:flex lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-xl">
@@ -158,9 +191,9 @@ export default function Home() {
               size="lg"
               nativeButton={false}
               role="link"
-              render={<Link href="#operator-model" />}
+              render={<Link href="#operator-console" />}
             >
-              Explore the product
+              See the product flow
             </Button>
             <Button
               variant="outline"
