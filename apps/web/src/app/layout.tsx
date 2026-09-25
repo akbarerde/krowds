@@ -15,17 +15,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "KROWDS — Find your next good day out",
+    default: "KROWDS — One clear operating system for every event",
     template: "%s | KROWDS",
   },
   description:
-    "Discover events, keep your tickets close, and follow payment status with KROWDS.",
+    "KROWDS helps event operators organize commerce, ticketing, fulfillment, and visitor access with accountable handoffs.",
   applicationName: "KROWDS",
-  keywords: ["events", "tickets", "Jakarta", "KROWDS"],
+  keywords: ["event operations", "ticketing", "fulfillment", "visitor access", "KROWDS"],
   openGraph: {
-    title: "KROWDS — Find your next good day out",
+    title: "KROWDS — One clear operating system for every event",
     description:
-      "A calm, transparent path from event discovery to your ticket wallet.",
+      "A calm, accountable operating model for the teams behind every event and the visitors they serve.",
     type: "website",
     siteName: "KROWDS",
   },

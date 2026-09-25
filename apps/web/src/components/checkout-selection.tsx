@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@krowds/ui/components/card";
+import { Input } from "@krowds/ui/components/input";
 import type { EventFixture, PaymentMethod, TicketProductFixture } from "@/lib/fixtures";
 import { formatDateRange, formatIdr } from "@/lib/format";
 
@@ -144,12 +145,12 @@ export function CheckoutSelection({ event }: { event: EventFixture }) {
                 <label htmlFor="holder-name" className="text-sm font-medium">
                   Ticket holder name
                 </label>
-                <input
+                <Input
                   id="holder-name"
                   name="holderName"
                   autoComplete="name"
                   placeholder="e.g. Ayu Pratama"
-                  className="h-10 rounded-lg border border-input bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                  className="h-10"
                 />
                 <p className="text-xs text-muted-foreground">
                   Identity validation and holder rules belong to the backend contract.

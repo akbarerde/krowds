@@ -1,6 +1,6 @@
 # KROWDS Web
 
-The public KROWDS frontend for event discovery, ticket access, checkout entry, and account context. This milestone is a frontend-only preview backed by typed local fixtures. It does not create orders, accept payments, authenticate users, or expose authoritative business state.
+The KROWDS public frontend for event operators and the visitors they serve. The homepage leads with the B2B operating model, while the event, ticket, checkout, and account routes provide a typed visitor-facing preview. This milestone is frontend-only and fixture-backed: it does not create orders, accept payments, authenticate users, or expose authoritative business state.
 
 ## At a glance
 
@@ -18,7 +18,7 @@ The public KROWDS frontend for event discovery, ticket access, checkout entry, a
 
 | Route | Purpose | State coverage |
 | --- | --- | --- |
-| `/` | Public landing and featured event entry | Search entry, featured content, MVP guardrails |
+| `/` | B2B operating-model landing and featured event entry | Operator preview, featured content, accountable handoffs |
 | `/events` | Event discovery | Search, category filters, populated and empty results |
 | `/events/[slug]` | Event detail | Schedule, ticket products, venue, accessibility, safe checkout entry |
 | `/events/[slug]/loading` | Streaming fallback for event detail | Accessible loading skeleton |
@@ -122,6 +122,8 @@ apps/web/
 ├── src/components/
 │   ├── checkout-selection.tsx
 │   ├── event-card.tsx
+│   ├── operator-preview.tsx
+│   ├── site-navigation.tsx
 │   └── site-shell.tsx
 ├── src/lib/
 │   ├── fixtures.ts

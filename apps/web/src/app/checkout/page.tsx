@@ -37,7 +37,12 @@ export default function CheckoutEntryPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="shrink-0 sm:pl-0">
-              <Button nativeButton={false} role="link" render={<Link href={`/checkout/${event.slug}`} aria-label={`Choose ${event.title}`} />}>
+              <Button
+                className="w-full sm:w-auto"
+                nativeButton={false}
+                role="link"
+                render={<Link href={`/checkout/${event.slug}`} aria-label={`Choose ${event.title}`} />}
+              >
                 Choose event
               </Button>
             </CardContent>

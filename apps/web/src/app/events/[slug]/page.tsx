@@ -87,15 +87,19 @@ export default async function EventPage({ params }: EventPageProps) {
           <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{event.summary}</p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-xl border bg-card p-4">
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">When</p>
-              <p className="mt-2 font-medium">{formatDateRange(event.startsAt, event.endsAt)}</p>
-            </div>
-            <div className="rounded-xl border bg-card p-4">
-              <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Where</p>
-              <p className="mt-2 font-medium">{event.venue.name}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{event.venue.city}</p>
-            </div>
+            <Card size="sm">
+              <CardHeader>
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">When</p>
+                <CardTitle className="text-base">{formatDateRange(event.startsAt, event.endsAt)}</CardTitle>
+              </CardHeader>
+            </Card>
+            <Card size="sm">
+              <CardHeader>
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Where</p>
+                <CardTitle className="text-base">{event.venue.name}</CardTitle>
+                <CardDescription>{event.venue.city}</CardDescription>
+              </CardHeader>
+            </Card>
           </div>
 
           <div className="typeset mt-10 max-w-2xl text-base leading-7">

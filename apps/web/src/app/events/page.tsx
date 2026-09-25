@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@krowds/ui/components/badge";
 import { Button } from "@krowds/ui/components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@krowds/ui/components/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@krowds/ui/components/card";
+import { Input } from "@krowds/ui/components/input";
 import { EventCard } from "@/components/event-card";
 import { events, type EventCategory } from "@/lib/fixtures";
 
@@ -94,12 +95,14 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
               </ul>
             </nav>
           </div>
-          <div className="rounded-xl border bg-muted/40 p-4 text-sm leading-6 text-muted-foreground">
-            <p className="font-medium text-foreground">Preview data only</p>
-            <p className="mt-1">
-              Live event availability and identity requirements will come from the Go-owned API.
-            </p>
-          </div>
+          <Card size="sm" className="bg-muted/40">
+            <CardHeader>
+              <CardTitle className="text-base">Preview data only</CardTitle>
+              <CardDescription className="leading-6">
+                Live event availability and identity requirements will come from the Go-owned API.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </aside>
 
         <section aria-labelledby="event-results-heading">
@@ -108,13 +111,13 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
               <label htmlFor="events-search" className="sr-only">
                 Search the event preview
               </label>
-              <input
+              <Input
                 id="events-search"
                 name="q"
                 type="search"
                 defaultValue={firstValue(params.q) ?? ""}
                 placeholder="Search events, organizers, or cities"
-                className="h-10 w-full rounded-lg border border-input bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="h-10 w-full"
               />
             </div>
             {category !== "All" ? <input type="hidden" name="category" value={category} /> : null}

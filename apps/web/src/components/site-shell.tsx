@@ -3,12 +3,7 @@ import type { ReactNode } from "react";
 import { Badge } from "@krowds/ui/components/badge";
 import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { Button } from "@krowds/ui/components/button";
-
-const navigation = [
-  { href: "/events", label: "Explore events" },
-  { href: "/tickets", label: "Ticket wallet" },
-  { href: "/account", label: "Account" },
-] as const;
+import { SiteNavigation } from "@/components/site-navigation";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -24,20 +19,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 sm:px-6 lg:px-10">
           <KrowdsBrand render={<Link href="/" />} />
 
-          <nav aria-label="Primary navigation" className="order-3 -mx-1 w-full overflow-x-auto sm:order-none sm:mx-0 sm:w-auto sm:flex-1">
-            <ul className="flex min-w-max items-center gap-1 px-1 sm:min-w-0">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="inline-flex min-h-10 items-center rounded-lg px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <SiteNavigation />
 
           <div className="ml-auto flex items-center gap-3">
             <Badge variant="outline" className="hidden sm:inline-flex">
@@ -63,21 +45,27 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="font-medium text-foreground">KROWDS</p>
             <p className="mt-1 max-w-md leading-6">
-              A calm path from finding an event to keeping your ticket close.
+              One accountable operating model for the teams behind every event and the visitors they serve.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link
+              href="/#operator-model"
+              className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              Operator model
+            </Link>
+            <Link
               href="/events"
               className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              Browse events
+              Visitor preview
             </Link>
             <Link
               href="/tickets"
               className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              Ticket wallet
+              Ticket lifecycle
             </Link>
             <span className="font-mono text-xs">Preview data only</span>
           </div>
