@@ -13,6 +13,13 @@ export const metadata: Metadata = {
 
 const featuredEvents = events.filter((event) => event.featured);
 
+const proofPoints = [
+  { label: "Tenant-scoped", detail: "Organization boundaries" },
+  { label: "Provider-backed", detail: "Payment state" },
+  { label: "Single-use", detail: "Access state" },
+  { label: "Online-first", detail: "MVP workflow" },
+] as const;
+
 const operatingSteps = [
   {
     label: "Organize",
@@ -107,12 +114,26 @@ export default function Home() {
         <OperatorPreview />
       </section>
 
+      <section aria-label="KROWDS operating guarantees" className="border-y">
+        <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {proofPoints.map((point) => (
+            <li key={point.label} className="flex min-h-20 items-center gap-3 bg-background px-4 py-4 sm:px-5">
+              <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-foreground" />
+              <span>
+                <span className="block text-sm font-semibold">{point.label}</span>
+                <span className="mt-1 block text-xs text-muted-foreground">{point.detail}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section
         id="operator-model"
-        className="scroll-mt-24 border-t py-12 sm:py-16"
+        className="scroll-mt-24 py-12 sm:py-16"
         aria-labelledby="operator-model-heading"
       >
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
           <div>
             <h2
               id="operator-model-heading"
@@ -124,30 +145,39 @@ export default function Home() {
               KROWDS connects setup, commerce, fulfillment, and access without asking the browser
               to guess business state.
             </p>
+            <Link
+              href="#visitor-preview"
+              className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              See the visitor side
+            </Link>
           </div>
-          <p className="max-w-xl text-sm leading-6 text-muted-foreground lg:justify-self-end">
-            Each handoff has a clear owner, a visible state, and a safe next action for the team
-            responsible for it.
-          </p>
-        </div>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {operatingSteps.map((step) => (
-            <div key={step.label} className="bg-background p-5">
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                {step.label}
-              </p>
-              <h3 className="mt-4 text-base font-semibold tracking-[-0.02em]">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {step.description}
-              </p>
-            </div>
-          ))}
+          <div className="border-y">
+            {operatingSteps.map((step) => (
+              <article
+                key={step.label}
+                className="grid gap-3 border-b py-5 last:border-b-0 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-6"
+              >
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                  {step.label}
+                </p>
+                <div>
+                  <h3 className="text-base font-semibold tracking-[-0.02em]">{step.title}</h3>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="border-t py-12 sm:py-16" aria-labelledby="featured-events-heading">
+      <section
+        id="visitor-preview"
+        className="scroll-mt-24 border-t py-12 sm:py-16"
+        aria-labelledby="featured-events-heading"
+      >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2
@@ -176,6 +206,43 @@ export default function Home() {
           {featuredEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
+        </div>
+      </section>
+
+      <section className="border-t py-12 sm:py-16" aria-labelledby="home-cta-heading">
+        <div className="rounded-2xl bg-foreground px-6 py-10 text-background sm:px-10 sm:py-12 lg:flex lg:items-end lg:justify-between lg:gap-10">
+          <div className="max-w-xl">
+            <h2
+              id="home-cta-heading"
+              className="text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-4xl"
+            >
+              Make the next event easier to run.
+            </h2>
+            <p className="mt-4 max-w-lg text-base leading-7 text-background/70">
+              Start with the operating model, then preview the visitor path your guests will see.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0">
+            <Button
+              variant="secondary"
+              size="lg"
+              nativeButton={false}
+              role="link"
+              render={<Link href="#operator-model" />}
+            >
+              See the operating model
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-background/40 bg-transparent text-background hover:bg-background/10 hover:text-background"
+              nativeButton={false}
+              role="link"
+              render={<Link href="/events" />}
+            >
+              Preview visitor experience
+            </Button>
+          </div>
         </div>
       </section>
     </div>
