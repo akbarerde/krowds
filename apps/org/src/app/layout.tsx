@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WorkspaceShell } from "@/components/workspace-shell";
 import "@krowds/ui/globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KROWDS Org",
-  description: "The KROWDS organization management frontend.",
+  title: {
+    default: "KROWDS Org",
+    template: "%s | KROWDS Org",
+  },
+  description: "Tenant-scoped organization operations for KROWDS.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -23,7 +27,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <WorkspaceShell>{children}</WorkspaceShell>
+      </body>
     </html>
   );
 }
