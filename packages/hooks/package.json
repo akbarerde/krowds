@@ -8,6 +8,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./use-copy-to-clipboard": "./src/use-copy-to-clipboard.ts",
+    "./use-mobile": "./src/use-mobile.ts",
     "./package.json": "./package.json"
   },
   "scripts": {

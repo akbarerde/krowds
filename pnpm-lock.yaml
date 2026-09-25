@@ -489,6 +489,9 @@ importers:
       '@base-ui/react':
         specifier: ^1.8.0
         version: 1.8.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@krowds/hooks':
+        specifier: workspace:*
+        version: link:../hooks
       '@krowds/utils':
         specifier: workspace:*
         version: link:../utils

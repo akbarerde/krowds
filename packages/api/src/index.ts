@@ -2,6 +2,15 @@ import type { ApiError } from "@krowds/types";
 import { buildQueryString } from "@krowds/utils";
 import { validateHttpUrl } from "@krowds/validation";
 
+export {
+  createFrontendFixtureClient,
+  FRONTEND_FIXTURE_SOURCE,
+  type FrontendFixtureClient,
+  type FrontendFixtureKey,
+  type FrontendFixtureMode,
+  type FrontendFixtureOptions,
+} from "./fixtures";
+
 export type QueryValue = boolean | number | string | null | undefined;
 
 export interface ApiClientOptions {

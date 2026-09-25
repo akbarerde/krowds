@@ -7,7 +7,7 @@ This document defines the visual language, interaction patterns, layout rules, a
 | Document ID | `KROWDS-DES-001` |
 | Version | `0.1` |
 | Status | `Draft` |
-| Last updated | `2026-09-24` |
+| Last updated | `2026-09-25` |
 | Owner | Design System Owner (`TBD`) |
 | Applies to | `apps/*` and `packages/ui` |
 | Source of truth | `packages/ui/src/styles/globals.css` and `packages/ui` |
@@ -263,6 +263,27 @@ Use `Badge` for compact status, category, or environment labels. It is not a but
 - Add or update a shared primitive only through the official shadcn/ui workflow and when the pattern is genuinely reusable across applications.
 - Do not introduce custom visual components; solve product-specific presentation with shadcn/ui Components, Blocks, Charts, Typeset, variants, tokens, and layout.
 
+### 8.5 Shared shell and navigation
+
+- `KrowdsBrand` is the shared KROWDS wordmark composition. It uses the official `Button` primitive and Lucide icon; pass the Base UI `render` prop when an application needs its framework link component.
+- `AppShell` is the small server-renderable page shell for a brand, optional primary navigation, optional actions, and page content. It establishes only shared orientation; applications own their information architecture and content width.
+- Use the official `NavigationMenu` composition for public or header navigation. Use `SidebarProvider`, `Sidebar`, `SidebarInset`, and the `SidebarMenu` family for persistent organization and KREW workspaces. The sidebar supplies its responsive mobile `Sheet`; provide `TooltipProvider` in the owning workspace when sidebar tooltips are used.
+- Keep navigation state and route decisions in the owning Next.js application. Shared navigation components receive links and active state; they do not fetch routes or call the backend.
+
+### 8.6 Forms, feedback, and system states
+
+- Compose forms with `FieldSet`, `FieldGroup`, `Field`, `FieldLabel`, `FieldDescription`, and `FieldError`. Add `data-invalid` to `Field` and `aria-invalid` to the control; add `data-disabled` to the field and `disabled` to the control.
+- Use `Input`, `Textarea`, `Checkbox`, and `Switch` for the MVP's basic text, choice, and settings controls. Add another official shadcn form primitive only when an approved application flow requires it.
+- Use `Alert` for inline warnings, errors, and confirmations; `Spinner` for short operations; `Skeleton` for shape-preserving placeholders; and `Empty` for a real empty result with a recovery action.
+- Use `Tabs` only for peer sections of the same context. Use `Separator` for semantic visual division rather than raw border markup.
+- Button loading state is composed with `Spinner`, `data-icon="inline-start"`, `disabled`, and an unchanged action label. Visual components do not own submission or business-state rules.
+
+### 8.7 Frontend fixtures and data authority
+
+`createFrontendFixtureClient` from `@krowds/api/fixtures` is a typed, read-only source for synthetic frontend development and tests. It is deliberately not a `KrowdsApiClient`: it performs no network request, handles no mutation, stores no credential, and exposes only registered fixture keys. Create it only with `mode: "development"` or `mode: "test"`, label fixture-backed UI as synthetic where users could confuse it with real data, and fail visibly when a requested fixture is missing.
+
+Fixture data is never authority for authentication, authorization, identity, organization scope, payment, ticket, wristband, activation, shipping, or gate decisions. Real frontends use `createApiClient` from `@krowds/api`; the Go backend remains authoritative for every business fact and transition. Do not add production fallback data, provider calls, or a fixture implementation of the real API client.
+
 ## 9. Application layout patterns
 
 ### Product surface mapping
@@ -401,6 +422,27 @@ The PWA must remain usable in browser and installed modes.
 12. Keep the English-first content and design language consistent across all five frontends.
 13. Do not put backend data access, authentication logic, or business rules in visual components.
 14. Review the rendered result in both themes before marking a visual change complete.
+
+### 16.1 Shared-package validation
+
+Run the narrowest relevant checks while iterating. Before completing a shared frontend foundation change, run:
+
+```bash
+pnpm --filter @krowds/ui lint
+pnpm --filter @krowds/ui typecheck
+pnpm --filter @krowds/ui build
+pnpm --filter @krowds/api lint
+pnpm --filter @krowds/api typecheck
+pnpm --filter @krowds/api build
+pnpm --filter @krowds/types lint
+pnpm --filter @krowds/types typecheck
+pnpm --filter @krowds/types build
+pnpm --filter @krowds/hooks lint
+pnpm --filter @krowds/hooks typecheck
+pnpm --filter @krowds/hooks build
+```
+
+A passing TypeScript build validates source-first exports; it does not replace rendered light/dark, responsive, keyboard, or fixture-boundary review.
 
 ## 17. Review checklist
 
