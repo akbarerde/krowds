@@ -18,7 +18,7 @@ The KROWDS public frontend for event operators and the visitors they serve. The 
 
 | Route | Purpose | State coverage |
 | --- | --- | --- |
-| `/` | B2B operating-model landing and featured event entry | Operator preview, featured content, accountable handoffs |
+| `/` | B2B product landing | Operating model, product workflow, accountable handoffs |
 | `/events` | Event discovery | Search, category filters, populated and empty results |
 | `/events/[slug]` | Event detail | Schedule, ticket products, venue, accessibility, safe checkout entry |
 | `/events/[slug]/loading` | Streaming fallback for event detail | Accessible loading skeleton |

@@ -6,7 +6,7 @@ import { cn } from "@krowds/ui/lib/utils";
 
 const navigation = [
   { href: "/#operator-model", label: "Platform" },
-  { href: "/events", label: "Visitor preview" },
+  { href: "/events", label: "Visitor surface" },
   { href: "/tickets", label: "Ticket lifecycle" },
   { href: "/account", label: "Account" },
 ] as const;

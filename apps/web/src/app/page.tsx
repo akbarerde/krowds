@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@krowds/ui/components/button";
-import { EventCard } from "@/components/event-card";
-import { events } from "@/lib/fixtures";
 
 export const metadata: Metadata = {
   title: "Run events with one clear operating system",
   description:
     "KROWDS helps event operators organize commerce, ticketing, fulfillment, and visitor access with accountable handoffs.",
 };
-
-const featuredEvents = events.filter((event) => event.featured);
 
 const proofPoints = [
   { label: "Tenant-scoped", detail: "Organization boundaries" },
@@ -51,12 +47,11 @@ export default function Home() {
             id="hero-heading"
             className="text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-8xl"
           >
-            Run every event with one clear operating system.
+            Run every event from one clear operating system.
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-            KROWDS gives venues, attractions, and event teams one place to organize commerce,
-            ticketing, fulfillment, and visitor access—while every important transition stays
-            accountable.
+            KROWDS is the B2B operating system for venues, attractions, and event teams—connecting
+            commerce, ticketing, fulfillment, and visitor access in one accountable workflow.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Button
@@ -66,7 +61,7 @@ export default function Home() {
               role="link"
               render={<Link href="#operator-model" />}
             >
-              See the operating model
+              Explore the product
             </Button>
             <Button
               variant="outline"
@@ -76,7 +71,7 @@ export default function Home() {
               role="link"
               render={<Link href="/events" />}
             >
-              Preview the visitor experience
+              See the visitor surface
             </Button>
           </div>
         </div>
@@ -109,17 +104,17 @@ export default function Home() {
               id="operator-model-heading"
               className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
             >
-              One operating rhythm
+              One workspace for the whole event day
             </h2>
             <p className="mt-3 max-w-xl text-base leading-7 text-muted-foreground">
-              KROWDS connects setup, commerce, fulfillment, and access without asking the browser
-              to guess business state.
+              Give every team a clear surface for setup, commerce, fulfillment, and access—without
+              losing the state behind each handoff.
             </p>
             <Link
-              href="#visitor-preview"
+              href="/events"
               className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              See the visitor side
+              See the visitor surface
             </Link>
           </div>
           <div className="border-y">
@@ -143,42 +138,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="visitor-preview"
-        className="scroll-mt-24 border-t py-12 sm:py-16"
-        aria-labelledby="featured-events-heading"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2
-              id="featured-events-heading"
-              className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
-            >
-              See the visitor side of the platform
-            </h2>
-            <p className="mt-2 max-w-2xl leading-7 text-muted-foreground">
-              Give guests a clear path from discovery to ticket access. The operator workspace
-              keeps the work behind that path visible to your team.
-            </p>
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="shrink-0"
-            nativeButton={false}
-            role="link"
-            render={<Link href="/events" />}
-          >
-            See all events
-          </Button>
-        </div>
-        <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {featuredEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
-      </section>
-
       <section className="border-t py-12 sm:py-16" aria-labelledby="home-cta-heading">
         <div className="rounded-2xl border border-border bg-muted/40 px-6 py-10 text-foreground sm:px-10 sm:py-12 lg:flex lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-xl">
@@ -186,10 +145,11 @@ export default function Home() {
               id="home-cta-heading"
               className="text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-4xl"
             >
-              Make the next event easier to run.
+              Give your team one clear operating picture.
             </h2>
             <p className="mt-4 max-w-lg text-base leading-7 text-muted-foreground">
-              Start with the operating model, then preview the visitor path your guests will see.
+              Bring setup, commerce, fulfillment, and access into one product workflow—then give
+              visitors a clear path to the event.
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0">
@@ -200,7 +160,7 @@ export default function Home() {
               role="link"
               render={<Link href="#operator-model" />}
             >
-              See the operating model
+              Explore the product
             </Button>
             <Button
               variant="outline"
@@ -210,7 +170,7 @@ export default function Home() {
               role="link"
               render={<Link href="/events" />}
             >
-              Preview visitor experience
+              See visitor surface
             </Button>
           </div>
         </div>

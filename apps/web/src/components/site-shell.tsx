@@ -26,7 +26,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               role="link"
               render={<Link href="/#operator-model" />}
             >
-              Open preview
+              Explore product
             </Button>
           </div>
         </div>
@@ -55,7 +55,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               href="/events"
               className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
-              Visitor preview
+              Visitor surface
             </Link>
             <Link
               href="/tickets"
