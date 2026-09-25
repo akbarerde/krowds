@@ -1,0 +1,31 @@
+{
+  "name": "@krowds/krew",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "clean": "rimraf .next next-env.d.ts tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "@krowds/hooks": "workspace:*",
+    "@krowds/ui": "workspace:*",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@krowds/eslint-config": "workspace:*",
+    "@krowds/tsconfig": "workspace:*",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.39.5",
+    "rimraf": "^6.0.1",
+    "typescript": "^5"
+  }
+}

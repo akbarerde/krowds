@@ -1,0 +1,28 @@
+{
+  "name": "@krowds/hooks",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "description": "Shared React hooks for Krowds frontends.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./use-copy-to-clipboard": "./src/use-copy-to-clipboard.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@krowds/tsconfig": "workspace:*",
+    "@types/react": "^19",
+    "eslint": "^9.39.5",
+    "react": "19.3.0",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  }
+}

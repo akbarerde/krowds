@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  sharp: true
+  unrs-resolver: false
+
+minimumReleaseAgeExclude:
+  - lucide-react@1.48.0

@@ -1,0 +1,31 @@
+{
+  "name": "krowds",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "turbo run build && go build -trimpath -o bin/services ./services/cmd/server",
+    "dev": "turbo run dev --parallel",
+    "dev:web": "pnpm --filter @krowds/web dev",
+    "dev:auth": "pnpm --filter @krowds/auth dev",
+    "dev:krew": "pnpm --filter @krowds/krew dev",
+    "dev:org": "pnpm --filter @krowds/org dev",
+    "dev:pwa": "pnpm --filter @krowds/pwa dev",
+    "dev:services": "go run ./services/cmd/server",
+    "lint": "eslint eslint.config.mjs && turbo run lint && go vet ./services/...",
+    "typecheck": "turbo run typecheck && go test -run=^$ ./services/...",
+    "test": "go test ./services/...",
+    "test:architecture": "go test -count=1 ./services/cmd/server",
+    "clean": "turbo run clean && go -C services clean && rimraf --glob node_modules/.cache .turbo bin coverage \"apps/*/.turbo\" \"packages/*/.turbo\" \"apps/*/coverage\" \"packages/*/coverage\""
+  },
+  "devDependencies": {
+    "@krowds/eslint-config": "workspace:*",
+    "eslint": "^9.39.5",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.8",
+    "typescript": "^5"
+  }
+}

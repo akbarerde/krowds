@@ -1,0 +1,14 @@
+.git
+.gitignore
+apps
+packages
+docs
+**/.env*
+**/bin
+**/coverage
+**/coverage.out
+**/dist
+**/node_modules
+**/.next
+**/.turbo
+**/*.log

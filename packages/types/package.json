@@ -1,0 +1,22 @@
+{
+  "name": "@krowds/types",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "description": "Shared TypeScript types for Krowds.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@krowds/tsconfig": "workspace:*",
+    "eslint": "^9.39.5",
+    "typescript": "^5"
+  }
+}

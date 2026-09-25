@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Turbo
+.turbo/
+
+# Environment
+.env*
+!.env.example
+*.pem
+
+# Coverage
+coverage/
+coverage.out
+
+# Logs
+*.log
+
+# Deployment
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Go
+**/bin/
+*.exe
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
