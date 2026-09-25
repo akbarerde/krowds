@@ -8,6 +8,7 @@
     "start": "next start -p 3004",
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
+    "test:pwa": "node --test tests/service-worker.test.mjs",
     "clean": "rimraf .next next-env.d.ts tsconfig.tsbuildinfo"
   },
   "dependencies": {
