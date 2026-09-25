@@ -122,7 +122,6 @@ apps/web/
 ├── src/components/
 │   ├── checkout-selection.tsx
 │   ├── event-card.tsx
-│   ├── site-navigation.tsx
 │   └── site-shell.tsx
 ├── src/lib/
 │   ├── fixtures.ts

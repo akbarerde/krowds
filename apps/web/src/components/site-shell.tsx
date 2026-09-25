@@ -1,8 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { Button } from "@krowds/ui/components/button";
-import { SiteNavigation } from "@/components/site-navigation";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -17,16 +15,21 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-30 bg-background/95">
         <div className="mx-auto w-full max-w-6xl px-5 py-3 sm:px-6 lg:px-10">
           <div className="flex min-h-14 items-center rounded-xl border border-border bg-background px-3 shadow-sm sm:px-4">
-            <KrowdsBrand render={<Link href="/" />} className="shrink-0 px-2" />
-            <SiteNavigation />
+            <Link
+              href="/"
+              aria-label="KROWDS home"
+              className="font-heading text-base font-bold tracking-[-0.02em] text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+            >
+              KROWDS
+            </Link>
             <Button
               size="sm"
-              className="ml-auto hidden sm:inline-flex"
+              className="ml-auto"
               nativeButton={false}
               role="link"
-              render={<Link href="/#operator-model" />}
+              render={<Link href="/account" />}
             >
-              Explore product
+              Login
             </Button>
           </div>
         </div>
