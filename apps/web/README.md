@@ -122,7 +122,6 @@ apps/web/
 ├── src/components/
 │   ├── checkout-selection.tsx
 │   ├── event-card.tsx
-│   ├── operator-preview.tsx
 │   ├── site-navigation.tsx
 │   └── site-shell.tsx
 ├── src/lib/

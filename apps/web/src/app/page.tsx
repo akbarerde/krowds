@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@krowds/ui/components/button";
 import { EventCard } from "@/components/event-card";
-import { OperatorPreview } from "@/components/operator-preview";
 import { events } from "@/lib/fixtures";
 
 export const metadata: Metadata = {
@@ -46,86 +45,62 @@ const operatingSteps = [
 export default function Home() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 sm:py-14 lg:px-10">
-      <section className="grid gap-10 py-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-center lg:gap-16 lg:py-16">
-        <div>
-          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
-            Run every event with one clear operating system.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-            KROWDS gives venues, attractions, and event teams one place to organize commerce,
-            ticketing, fulfillment, and visitor access—while every important transition stays
-            accountable.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              size="lg"
-              nativeButton={false}
-              role="link"
-              render={<Link href="#operator-model" />}
+      <section
+        aria-labelledby="hero-heading"
+        className="overflow-hidden rounded-xl bg-foreground text-background ring-1 ring-foreground/10"
+      >
+        <div className="px-5 py-16 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1
+              id="hero-heading"
+              className="text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-background sm:text-6xl lg:text-8xl"
             >
-              See the operating model
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              nativeButton={false}
-              role="link"
-              render={<Link href="/events" />}
-            >
-              Preview the visitor experience
-            </Button>
-          </div>
-          <nav
-            aria-label="KROWDS platform surfaces"
-            className="mt-10 max-w-xl border-y py-4"
-          >
-            <p className="text-sm font-medium text-foreground">
-              One platform, two clear surfaces
+              Run every event with one clear operating system.
+            </h1>
+            <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-background/70 sm:text-xl">
+              KROWDS gives venues, attractions, and event teams one place to organize commerce,
+              ticketing, fulfillment, and visitor access—while every important transition stays
+              accountable.
             </p>
-            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link
-                  href="/events"
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                size="lg"
+                className="bg-background text-foreground hover:bg-background/90"
+                nativeButton={false}
+                role="link"
+                render={<Link href="#operator-model" />}
+              >
+                See the operating model
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-background/35 bg-transparent text-background hover:bg-background/10 hover:text-background"
+                nativeButton={false}
+                role="link"
+                render={<Link href="/events" />}
+              >
+                Preview the visitor experience
+              </Button>
+            </div>
+          </div>
+          <div className="mt-16 border-t border-background/15 pt-5 sm:mt-20">
+            <ul className="grid gap-px bg-background/15 sm:grid-cols-2 lg:grid-cols-4">
+              {proofPoints.map((point) => (
+                <li
+                  key={point.label}
+                  className="flex min-h-16 items-center gap-3 bg-foreground px-3 py-3 sm:px-4"
                 >
-                  Visitor discovery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tickets"
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                >
-                  Ticket lifecycle
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/account"
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                >
-                  Account context
-                </Link>
-              </li>
+                  <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-background" />
+                  <span>
+                    <span className="block text-sm font-semibold text-background">{point.label}</span>
+                    <span className="mt-1 block text-xs text-background/60">{point.detail}</span>
+                  </span>
+                </li>
+              ))}
             </ul>
-          </nav>
+          </div>
         </div>
-
-        <OperatorPreview />
-      </section>
-
-      <section aria-label="KROWDS operating guarantees" className="border-y">
-        <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {proofPoints.map((point) => (
-            <li key={point.label} className="flex min-h-20 items-center gap-3 bg-background px-4 py-4 sm:px-5">
-              <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-foreground" />
-              <span>
-                <span className="block text-sm font-semibold">{point.label}</span>
-                <span className="mt-1 block text-xs text-muted-foreground">{point.detail}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section
