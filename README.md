@@ -4,14 +4,14 @@ The KROWDS monorepo contains five Next.js frontend applications and one Go backe
 
 ## Components
 
-| Component | Package/Path | Port | Focus |
-| --- | --- | ---: | --- |
-| Web | `@krowds/web` | 3000 | Primary public frontend |
-| Auth | `@krowds/auth` | 3001 | Login, registration, and session management |
-| Krew | `@krowds/krew` | 3002 | Crew workspaces and collaboration |
-| Org | `@krowds/org` | 3003 | Organization management |
-| PWA | `@krowds/pwa` | 3004 | Progressive web application and offline app shell |
-| Services | `services/` | 8080 | Go + Gin backend implemented as a modular monolith |
+| Component | Package/Path | Port | Focus | Guide |
+| --- | --- | ---: | --- | --- |
+| Web | `@krowds/web` | 3000 | Primary public frontend | [Web guide](apps/web/README.md) |
+| Auth | `@krowds/auth` | 3001 | Login, registration, and session management | [Auth guide](apps/auth/README.md) |
+| Krew | `@krowds/krew` | 3002 | Crew workspaces and collaboration | [Krew guide](apps/krew/README.md) |
+| Org | `@krowds/org` | 3003 | Organization management | [Org guide](apps/org/README.md) |
+| PWA | `@krowds/pwa` | 3004 | Progressive web application and offline app shell | [PWA guide](apps/pwa/README.md) |
+| Services | `services/` | 8080 | Go + Gin backend implemented as a modular monolith | [Services architecture](#services-architecture) |
 
 ## Stack
 
@@ -80,23 +80,6 @@ The services run at `http://localhost:8080` and provide:
 - `GET /` — service metadata and registered modules
 - `GET /health/live` — liveness probe
 - `GET /health/ready` — readiness probe
-
-## Running a single component
-
-```bash
-pnpm dev:web
-pnpm dev:auth
-pnpm dev:krew
-pnpm dev:org
-pnpm dev:pwa
-pnpm dev:services
-```
-
-Or use a direct filter:
-
-```bash
-pnpm --filter @krowds/web dev
-```
 
 ## Validation
 
@@ -187,17 +170,6 @@ After the preset is aligned, add components through the official CLI. Primitives
 ```bash
 pnpm dlx shadcn@4.21.0 add input label --cwd apps/web
 ```
-
-## PWA
-
-The service worker is intentionally registered only in production builds so that its cache does not interfere with development.
-
-```bash
-pnpm --filter @krowds/pwa build
-pnpm --filter @krowds/pwa start
-```
-
-Open `http://localhost:3004`, then use the install application menu in a PWA-capable browser.
 
 ## Structure
 
