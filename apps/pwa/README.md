@@ -1,6 +1,6 @@
-# Krowds PWA
+# KROWDS PWA
 
-The Krowds progressive web app with a manifest and offline app shell.
+The KROWDS progressive web app with a manifest and offline app shell.
 
 ```bash
 pnpm dev

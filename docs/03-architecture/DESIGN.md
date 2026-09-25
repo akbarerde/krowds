@@ -1,6 +1,6 @@
-# KROWDS-DES-001 — Krowds Design System
+# KROWDS-DES-001 — KROWDS Design System
 
-This document defines the visual language, interaction patterns, layout rules, and quality standards for all Krowds frontends. Product behavior and scope are defined in [PRODUCT-VISION.md](../01-product/PRODUCT-VISION.md).
+This document defines the visual language, interaction patterns, layout rules, and quality standards for all KROWDS frontends. Product behavior and scope are defined in [PRODUCT-VISION.md](../01-product/PRODUCT-VISION.md).
 
 | Field | Value |
 | --- | --- |
@@ -18,7 +18,7 @@ The design baseline is active for the current frontend scaffold; the document st
 
 ## 1. Purpose
 
-Krowds should feel clear, calm, capable, and dependable. The interface should help people understand where they are, what is happening, and what action is available next.
+KROWDS should feel clear, calm, capable, and dependable. The interface should help people understand where they are, what is happening, and what action is available next.
 
 The design system is intentionally small. Shared primitives establish consistency; each application remains responsible for its own information architecture, page composition, and product-specific workflows.
 
@@ -42,7 +42,7 @@ Use this document when:
 
 ## 3. Visual language
 
-Krowds uses a neutral, editorial foundation with restrained accents:
+KROWDS uses a neutral, editorial foundation with restrained accents:
 
 - neutral surfaces and dark text provide a dependable base;
 - rounded surfaces communicate approachability without becoming playful;
@@ -198,7 +198,7 @@ Design mobile-first unless an existing flow clearly requires another order.
 
 ### Approved style preset
 
-`b2fA` is the only approved shadcn/ui style preset for Krowds. It defines the Nova visual language, neutral base, Geist typography, Lucide icons, and the shared design tokens used by the applications.
+`b2fA` is the only approved shadcn/ui style preset for KROWDS. It defines the Nova visual language, neutral base, Geist typography, Lucide icons, and the shared design tokens used by the applications.
 
 Use the official preset command when applying or synchronizing the approved configuration:
 
@@ -210,12 +210,12 @@ After the preset is applied, use `shadcn add` to add components to the shared UI
 
 ### shadcn/ui building blocks
 
-Krowds uses the complete shadcn/ui design vocabulary. Choose the smallest official surface that solves the design problem:
+KROWDS uses the complete shadcn/ui design vocabulary. Choose the smallest official surface that solves the design problem:
 
-| Surface | Use it for | Krowds rule |
+| Surface | Use it for | KROWDS rule |
 | --- | --- | --- |
 | **Components** | Buttons, cards, badges, inputs, dialogs, navigation, and other UI primitives | Use the shared component from `@krowds/ui`; do not reimplement it |
-| **Blocks** | Complete sections and page compositions such as dashboards, authentication layouts, sidebars, and empty states | Start from an official block and adapt it with Krowds tokens; do not create a parallel block system |
+| **Blocks** | Complete sections and page compositions such as dashboards, authentication layouts, sidebars, and empty states | Start from an official block and adapt it with KROWDS tokens; do not create a parallel block system |
 | **Charts** | Charts, dashboards, metrics, and data visualization | Use the official chart patterns and `chart-1` through `chart-5` tokens; provide accessible labels and never communicate meaning by color alone |
 | **Typeset** | Headings, prose, lists, code, and other typography patterns | Use the official typeset patterns with Geist and semantic HTML; do not create a custom typography component |
 

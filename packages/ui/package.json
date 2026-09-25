@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Shared shadcn/ui Components, Blocks, Charts, Typeset, and design primitives for Krowds.",
+  "description": "Shared shadcn/ui Components, Blocks, Charts, Typeset, and design primitives for KROWDS.",
   "sideEffects": [
     "**/*.css"
   ],

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "sideEffects": false,
-  "description": "Framework-agnostic helpers shared across Krowds.",
+  "description": "Framework-agnostic helpers shared across KROWDS.",
   "exports": {
     ".": "./src/index.ts",
     "./package.json": "./package.json"

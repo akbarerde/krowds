@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "sideEffects": false,
-  "description": "Shared validation primitives for Krowds.",
+  "description": "Shared validation primitives for KROWDS.",
   "exports": {
     ".": "./src/index.ts",
     "./package.json": "./package.json"

@@ -1,6 +1,6 @@
-# Krowds Org
+# KROWDS Org
 
-The Krowds organization management frontend.
+The KROWDS organization management frontend.
 
 ```bash
 pnpm dev

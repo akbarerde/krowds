@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "Krowds Progressive Web App",
-    short_name: "Krowds",
-    description: "The Krowds progressive web app frontend.",
+    name: "KROWDS Progressive Web App",
+    short_name: "KROWDS",
+    description: "The KROWDS progressive web app frontend.",
     start_url: "/",
     scope: "/",
     display: "standalone",

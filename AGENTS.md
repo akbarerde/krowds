@@ -1,6 +1,6 @@
 # KROWDS Monorepo Instructions
 
-These instructions apply to the entire Krowds monorepo.
+These instructions apply to the entire KROWDS monorepo.
 
 ## Repository layout
 

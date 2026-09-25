@@ -26,7 +26,7 @@ export default function Home() {
             Frontend foundation
           </Badge>
           <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-tight tracking-tight sm:text-7xl">
-            The main web frontend for the entire Krowds ecosystem.
+            The main web frontend for the entire KROWDS ecosystem.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
             A public Next.js App Router frontend with TypeScript, Tailwind CSS, and shadcn/ui.
@@ -47,7 +47,7 @@ export default function Home() {
         </section>
 
         <footer className="flex flex-col gap-2 border-t pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>Krowds frontend monorepo</span>
+          <span>KROWDS frontend monorepo</span>
           <Badge variant="outline" className="font-mono">
             localhost:3000
           </Badge>

@@ -1,6 +1,6 @@
-# Krowds Auth
+# KROWDS Auth
 
-The Krowds authentication frontend.
+The KROWDS authentication frontend.
 
 ```bash
 pnpm dev

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "sideEffects": false,
-  "description": "Shared React hooks for Krowds frontends.",
+  "description": "Shared React hooks for KROWDS frontends.",
   "exports": {
     ".": "./src/index.ts",
     "./use-copy-to-clipboard": "./src/use-copy-to-clipboard.ts",

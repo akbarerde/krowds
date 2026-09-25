@@ -1,6 +1,6 @@
-# Krowds Krew
+# KROWDS Krew
 
-The Krowds crew workspace and collaboration frontend.
+The KROWDS crew workspace and collaboration frontend.
 
 ```bash
 pnpm dev

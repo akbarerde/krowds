@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Krowds Next.js",
+  "display": "KROWDS Next.js",
   "extends": "./base.json",
   "compilerOptions": {
     "target": "ES2017",

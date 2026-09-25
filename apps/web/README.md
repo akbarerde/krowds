@@ -1,6 +1,6 @@
-# Krowds Web
+# KROWDS Web
 
-The main Krowds web frontend.
+The main KROWDS web frontend.
 
 ```bash
 pnpm dev

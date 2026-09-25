@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Krowds Krew",
-  description: "The Krowds crew workspace frontend.",
+  title: "KROWDS Krew",
+  description: "The KROWDS crew workspace frontend.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

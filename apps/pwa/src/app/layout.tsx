@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Krowds PWA",
-  description: "The Krowds progressive web app frontend.",
-  applicationName: "Krowds PWA",
+  title: "KROWDS PWA",
+  description: "The KROWDS progressive web app frontend.",
+  applicationName: "KROWDS PWA",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Krowds",
+    title: "KROWDS",
   },
   formatDetection: {
     telephone: false,

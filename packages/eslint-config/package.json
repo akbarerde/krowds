@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Shared ESLint flat configurations for Krowds workspaces.",
+  "description": "Shared ESLint flat configurations for KROWDS workspaces.",
   "exports": {
     "./base": "./base.js",
     "./next": "./next.js",

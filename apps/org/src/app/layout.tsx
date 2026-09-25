@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Krowds Org",
-  description: "The Krowds organization management frontend.",
+  title: "KROWDS Org",
+  description: "The KROWDS organization management frontend.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

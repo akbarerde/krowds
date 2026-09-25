@@ -41,7 +41,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check Go modules
-        run: go mod tidy -diff
+        run: go -C services mod tidy -diff
 
       - name: Check Go formatting
         run: test -z "$(gofmt -l services)"

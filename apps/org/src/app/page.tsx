@@ -51,7 +51,7 @@ export default function Home() {
         </section>
 
         <footer className="flex flex-col gap-2 border-t pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>Krowds frontend monorepo</span>
+          <span>KROWDS frontend monorepo</span>
           <Badge variant="outline" className="font-mono">
             localhost:3003
           </Badge>

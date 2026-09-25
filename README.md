@@ -1,6 +1,6 @@
-# Krowds Monorepo
+# KROWDS Monorepo
 
-The Krowds monorepo contains five Next.js frontend applications and one Go backend located at the repository root under `services/`. The frontend applications are managed with **pnpm workspace** and **Turborepo**, while the services are managed as a single Go module within `go.work`.
+The KROWDS monorepo contains five Next.js frontend applications and one Go backend located at the repository root under `services/`. The frontend applications are managed with **pnpm workspace** and **Turborepo**, while the services are managed as a single Go module within `go.work`.
 
 ## Components
 
@@ -225,27 +225,36 @@ Open `http://localhost:3004`, then use the install application menu in a PWA-cap
 │   └── go.sum
 ├── docs/
 │   ├── INDEX.md
-│   ├── KROWDS.md
-│   ├── PRODUCT-VISION.md
-│   ├── BRD.md
-│   ├── PRD.md
-│   ├── SRS.md
-│   ├── NFR.md
-│   ├── API-CONTRACT.md
-│   ├── DATA-MODEL.md
-│   ├── ARCHITECTURE.md
-│   ├── DESIGN.md
-│   ├── GLOSSARY.md
-│   ├── STATE-MACHINES.md
-│   ├── SECURITY.md
-│   ├── PRIVACY.md
-│   ├── INTEGRATIONS.md
-│   ├── DEPLOYMENT.md
-│   ├── RUNBOOK.md
-│   ├── ADR.md
-│   ├── TEST-PLAN.md
-│   ├── RISK-REGISTER.md
-│   └── ROADMAP.md
+│   ├── 00-governance/
+│   │   └── OPEN-DECISIONS.md
+│   ├── 01-product/
+│   │   ├── PRODUCT-VISION.md
+│   │   ├── KROWDS.md
+│   │   ├── BRD.md
+│   │   ├── PRD.md
+│   │   ├── ROADMAP.md
+│   │   └── GLOSSARY.md
+│   ├── 02-requirements/
+│   │   ├── SRS.md
+│   │   ├── NFR.md
+│   │   └── TEST-PLAN.md
+│   ├── 03-architecture/
+│   │   ├── ARCHITECTURE.md
+│   │   ├── ADR.md
+│   │   └── DESIGN.md
+│   ├── 04-domain/
+│   │   ├── API-CONTRACT.md
+│   │   ├── DATA-MODEL.md
+│   │   └── STATE-MACHINES.md
+│   ├── 05-security/
+│   │   ├── SECURITY.md
+│   │   ├── PRIVACY.md
+│   │   └── RISK-REGISTER.md
+│   ├── 06-integrations/
+│   │   └── INTEGRATIONS.md
+│   └── 07-operations/
+│       ├── DEPLOYMENT.md
+│       └── RUNBOOK.md
 ├── .github/
 │   └── workflows/
 ├── .env.example

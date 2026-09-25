@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "sideEffects": false,
-  "description": "Typed API client shared across Krowds frontends.",
+  "description": "Typed API client shared across KROWDS frontends.",
   "exports": {
     ".": "./src/index.ts",
     "./package.json": "./package.json"

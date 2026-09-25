@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "sideEffects": false,
-  "description": "Shared TypeScript types for Krowds.",
+  "description": "Shared TypeScript types for KROWDS.",
   "exports": {
     ".": "./src/index.ts",
     "./package.json": "./package.json"

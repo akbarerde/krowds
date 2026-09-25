@@ -36,7 +36,7 @@ export default function Home() {
             PWA surface
           </Badge>
           <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-tight tracking-tight sm:text-7xl">
-            A fast Krowds app that stays available.
+            A fast KROWDS app that stays available.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
             A PWA with a manifest, icon, service worker registration, and app-shell cache. The service worker runs in production.
@@ -64,7 +64,7 @@ export default function Home() {
         </section>
 
         <footer className="flex flex-col gap-2 border-t pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>Krowds frontend monorepo</span>
+          <span>KROWDS frontend monorepo</span>
           <Badge variant="outline" className="font-mono">
             localhost:3004
           </Badge>

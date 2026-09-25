@@ -33,7 +33,7 @@ export default function Home() {
             Centralized authentication for secure access.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
-            A dedicated frontend for identity, session, and authorization flows across Krowds.
+            A dedicated frontend for identity, session, and authorization flows across KROWDS.
           </p>
 
           <div className="mt-12 grid gap-3 lg:grid-cols-3">
@@ -51,7 +51,7 @@ export default function Home() {
         </section>
 
         <footer className="flex flex-col gap-2 border-t pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>Krowds frontend monorepo</span>
+          <span>KROWDS frontend monorepo</span>
           <Badge variant="outline" className="font-mono">
             localhost:3001
           </Badge>
