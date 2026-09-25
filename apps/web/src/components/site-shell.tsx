@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Badge } from "@krowds/ui/components/badge";
 import { KrowdsBrand } from "@krowds/ui/components/brand";
 import { Button } from "@krowds/ui/components/button";
 import { SiteNavigation } from "@/components/site-navigation";
@@ -15,22 +14,19 @@ export function SiteShell({ children }: { children: ReactNode }) {
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-30 border-b bg-background">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 sm:px-6 lg:px-10">
-          <KrowdsBrand render={<Link href="/" />} />
-
-          <SiteNavigation />
-
-          <div className="ml-auto flex items-center gap-3">
-            <Badge variant="outline" className="hidden sm:inline-flex">
-              Illustrative preview
-            </Badge>
+      <header className="sticky top-0 z-30 bg-background/95">
+        <div className="mx-auto w-full max-w-6xl px-5 py-3 sm:px-6 lg:px-10">
+          <div className="flex min-h-14 items-center rounded-xl border border-border bg-background px-3 shadow-sm sm:px-4">
+            <KrowdsBrand render={<Link href="/" />} className="shrink-0 px-2" />
+            <SiteNavigation />
             <Button
-              variant="outline"
               size="sm"
-              nativeButton={false} role="link" render={<Link href="/account" aria-label="Open account context" />}
+              className="ml-auto hidden sm:inline-flex"
+              nativeButton={false}
+              role="link"
+              render={<Link href="/#operator-model" />}
             >
-              My account
+              Open preview
             </Button>
           </div>
         </div>

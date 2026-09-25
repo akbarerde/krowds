@@ -45,61 +45,56 @@ const operatingSteps = [
 export default function Home() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 sm:py-14 lg:px-10">
-      <section
-        aria-labelledby="hero-heading"
-        className="overflow-hidden rounded-xl bg-foreground text-background ring-1 ring-foreground/10"
-      >
-        <div className="px-5 py-16 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1
-              id="hero-heading"
-              className="text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-background sm:text-6xl lg:text-8xl"
+      <section aria-labelledby="hero-heading" className="py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1
+            id="hero-heading"
+            className="text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-8xl"
+          >
+            Run every event with one clear operating system.
+          </h1>
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
+            KROWDS gives venues, attractions, and event teams one place to organize commerce,
+            ticketing, fulfillment, and visitor access—while every important transition stays
+            accountable.
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/80"
+              nativeButton={false}
+              role="link"
+              render={<Link href="#operator-model" />}
             >
-              Run every event with one clear operating system.
-            </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-background/70 sm:text-xl">
-              KROWDS gives venues, attractions, and event teams one place to organize commerce,
-              ticketing, fulfillment, and visitor access—while every important transition stays
-              accountable.
-            </p>
-            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button
-                size="lg"
-                className="bg-background text-foreground hover:bg-background/90"
-                nativeButton={false}
-                role="link"
-                render={<Link href="#operator-model" />}
-              >
-                See the operating model
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-background/35 bg-transparent text-background hover:bg-background/10 hover:text-background"
-                nativeButton={false}
-                role="link"
-                render={<Link href="/events" />}
-              >
-                Preview the visitor experience
-              </Button>
-            </div>
+              See the operating model
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-border bg-background text-foreground hover:bg-muted"
+              nativeButton={false}
+              role="link"
+              render={<Link href="/events" />}
+            >
+              Preview the visitor experience
+            </Button>
           </div>
-          <div className="mt-16 border-t border-background/15 pt-5 sm:mt-20">
-            <ul className="grid gap-px bg-background/15 sm:grid-cols-2 lg:grid-cols-4">
-              {proofPoints.map((point) => (
-                <li
-                  key={point.label}
-                  className="flex min-h-16 items-center gap-3 bg-foreground px-3 py-3 sm:px-4"
-                >
-                  <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-background" />
-                  <span>
-                    <span className="block text-sm font-semibold text-background">{point.label}</span>
-                    <span className="mt-1 block text-xs text-background/60">{point.detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        </div>
+        <div className="mx-auto mt-16 max-w-6xl border-t border-border pt-5 sm:mt-20">
+          <ul className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {proofPoints.map((point) => (
+              <li
+                key={point.label}
+                className="flex min-h-16 items-center gap-3 bg-background px-3 py-3 sm:px-4"
+              >
+                <span aria-hidden="true" className="size-1.5 shrink-0 rounded-full bg-foreground" />
+                <span>
+                  <span className="block text-sm font-semibold text-foreground">{point.label}</span>
+                  <span className="mt-1 block text-xs text-muted-foreground">{point.detail}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -185,7 +180,7 @@ export default function Home() {
       </section>
 
       <section className="border-t py-12 sm:py-16" aria-labelledby="home-cta-heading">
-        <div className="rounded-2xl bg-foreground px-6 py-10 text-background sm:px-10 sm:py-12 lg:flex lg:items-end lg:justify-between lg:gap-10">
+        <div className="rounded-2xl border border-border bg-muted/40 px-6 py-10 text-foreground sm:px-10 sm:py-12 lg:flex lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-xl">
             <h2
               id="home-cta-heading"
@@ -193,7 +188,7 @@ export default function Home() {
             >
               Make the next event easier to run.
             </h2>
-            <p className="mt-4 max-w-lg text-base leading-7 text-background/70">
+            <p className="mt-4 max-w-lg text-base leading-7 text-muted-foreground">
               Start with the operating model, then preview the visitor path your guests will see.
             </p>
           </div>
@@ -210,7 +205,7 @@ export default function Home() {
             <Button
               variant="outline"
               size="lg"
-              className="border-background/40 bg-transparent text-background hover:bg-background/10 hover:text-background"
+              className="border-border bg-background text-foreground hover:bg-muted"
               nativeButton={false}
               role="link"
               render={<Link href="/events" />}

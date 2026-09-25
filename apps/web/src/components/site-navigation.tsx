@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { buttonVariants } from "@krowds/ui/components/button";
 import { cn } from "@krowds/ui/lib/utils";
 
 const navigation = [
@@ -26,11 +25,8 @@ export function SiteNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav
-      aria-label="Primary navigation"
-      className="order-3 -mx-1 w-full overflow-x-auto sm:order-none sm:mx-0 sm:w-auto sm:flex-1"
-    >
-      <ul className="flex min-w-max items-center gap-1 px-1 sm:min-w-0">
+    <nav aria-label="Primary navigation" className="min-w-0 flex-1 overflow-x-auto">
+      <ul className="flex min-w-max items-center gap-4 sm:gap-6">
         {navigation.map((item) => {
           const active = isCurrentPath(pathname, item.href);
 
@@ -40,11 +36,10 @@ export function SiteNavigation() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  buttonVariants({
-                    variant: active ? "secondary" : "ghost",
-                    size: "lg",
-                  }),
-                  "min-h-10 shrink-0 px-3",
+                  "inline-flex h-14 shrink-0 items-center border-b-2 px-1 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:px-2",
+                  active
+                    ? "border-foreground text-foreground"
+                    : "border-transparent text-muted-foreground hover:border-border hover:text-foreground",
                 )}
               >
                 {item.label}
